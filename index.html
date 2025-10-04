@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio e Timer com Giro 3D H:M:S</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="mode-selector">
+            <button id="show-clock" class="active">RELÓGIO</button>
+            <button id="show-timer">TIMER</button>
+        </div>
+
+        <div class="display-container">
+            
+            <div id="clock-view" class="active">
+                <div class="digital-clock">
+                    <div class="digit-group hours">
+                        <div class="digit-box tens">0</div>
+                        <div class="digit-box units">0</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="digit-group minutes">
+                        <div class="digit-box tens">0</div>
+                        <div class="digit-box units">0</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="digit-group seconds">
+                        <div class="digit-box tens">0</div>
+                        <div class="digit-box units">0</div>
+                    </div>
+                </div>
+                <div class="date-info">
+                    <span id="day-of-week">---</span>
+                    <span id="month">---</span>
+                    <span id="day-of-month">--</span>
+                </div>
+            </div>
+
+            <div id="timer-view" class="hidden">
+                <div class="timer-display">
+                    <div class="digit-group timer-hours">
+                        <div class="digit-box tens" id="timer-hour-tens">0</div>
+                        <div class="digit-box units" id="timer-hour-units">0</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="digit-group timer-minutes">
+                        <div class="digit-box tens" id="timer-min-tens">0</div>
+                        <div class="digit-box units" id="timer-min-units">0</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="digit-group timer-seconds">
+                        <div class="digit-box tens" id="timer-sec-tens">0</div>
+                        <div class="digit-box units" id="timer-sec-units">0</div>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button id="start-timer">INICIAR</button>
+                    <button id="pause-timer" class="hidden">PAUSAR</button>
+                    <button id="reset-timer">RESETAR</button>
+                    <button id="config-timer">CONFIGURAR</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="timer-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>CONFIGURAR TEMPO</h2>
+                
+                <div class="config-labels">
+                    <label for="config-hours">HORA</label>
+                    <label for="config-minutes">MINUTO</label>
+                    <label for="config-seconds">SEGUNDO</label>
+                </div>
+
+                <div class="config-time-display">
+                    <input type="number" id="config-hours" min="0" max="99" value="00" maxlength="2">
+                    <span>:</span>
+                    <input type="number" id="config-minutes" min="0" max="59" value="00" maxlength="2">
+                    <span>:</span>
+                    <input type="number" id="config-seconds" min="0" max="59" value="00" maxlength="2">
+                </div>
+
+                <div class="modal-actions">
+                    <button id="save-timer">SALVAR</button>
+                    <button id="close-modal">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
